@@ -1,22 +1,31 @@
-numbers = [5, 12, 7, 18, 9, 24, 3, 16, 11]
+def classify_numbers(numbers):
+    counts = {"positive": 0, "zero": 0, "negative": 0}
 
-div_by_3 = 0
-even_not_3 = 0
-odd_not_3 = 0
+    for num in numbers:
+        if num > 0:
+            print(f"{num} is positive")
+            counts["positive"] += 1
+        elif num == 0:
+            print(f"{num} is zero")
+            counts["zero"] += 1
+        else:
+            print(f"{num} is negative")
+            counts["negative"] += 1
 
-for num in numbers:
-    if num % 3 == 0:
-        print(f"{num} is divisible by 3")
-        div_by_3 += 1
-    elif num % 2 == 0:
-        print(f"{num} is even but not divisible by 3")
-        even_not_3 += 1
-    else:
-        print(f"{num} is odd and not divisible by 3")
-        odd_not_3 += 1
+    return counts
 
-print(f"\nDivisible by 3: {div_by_3}")
-print(f"Even but not divisible by 3: {even_not_3}")
-print(f"Odd and not divisible by 3: {odd_not_3}")
+# Example
+nums = [-5, 0, 3, 9, -1, 0, 7]
+summary = classify_numbers(nums)
+print("Counts:", summary)
+-5 is negative
+0 is zero
+3 is positive
+9 is positive
+-1 is negative
+0 is zero
+7 is positive
+Counts: {'positive': 3, 'zero': 2, 'negative': 2}
+
 
 
